@@ -2,12 +2,14 @@
 <html lang="ar" dir="rtl"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>معا ضد العنف</title>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{--o1:#a8430f;--o2:#d9622a;--o3:#E87532;--gold:#f2d27a;--g2:#d9ac3f;--iv:#fff4e0;--dk:rgba(70,22,0,.5);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%}
-body{background:linear-gradient(160deg,var(--o1),var(--o2));background-attachment:fixed;color:var(--iv);font-family:'Tajawal',Tahoma,sans-serif;line-height:1.6}
-h1,h2,h3{font-family:'Tajawal',Tahoma,sans-serif;font-weight:800;margin:.3em 0}
+body{background:linear-gradient(160deg,var(--o1),var(--o2));background-attachment:fixed;color:var(--iv);font-family:'Tajawal',Tahoma,system-ui,sans-serif;line-height:1.6}
+h1,h2,h3{font-family:'Tajawal',Tahoma,system-ui,sans-serif;margin:.3em 0}
 #app{max-width:1000px;margin:0 auto;padding:14px;min-height:92vh}
 .c{text-align:center}.badge{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;margin-bottom:10px}
 .pill{direction:ltr;background:var(--iv);color:var(--o1);font-weight:700;font-size:12px;padding:3px 12px;border-radius:99px}
@@ -68,7 +70,7 @@ mk(8,'الإبلاغ والدعم',S2,'أي من التالي يُعتبر من 
 mk(9,'العدالة',S3,'ماذا يعني ضمان الوصول إلى العدالة؟',['توفير آليات آمنة للإبلاغ وخدمات قانونية واستجابة فعالة.','منع الناجيات من تقديم الشكاوى.','تجاهل الحالات التي لا تصل إلى المحاكم.'],0,'العدالة تشمل الوصول إلى آليات الإبلاغ والدعم والإنصاف.'),
 mk(10,'العدالة',S3,'أي من التالي يساعد النساء والفتيات على الوصول إلى العدالة؟',['التوعية بالحقوق.','توفير المساعدة القانونية.','تسهيل الوصول إلى خدمات الإبلاغ.','جميع ما سبق.'],3,'التمكين القانوني والوصول إلى المعلومات والخدمات من أهداف الحملة.'),
 mk(11,'المسؤولية المجتمعية',S3,'من يتحمل مسؤولية المساهمة في إنهاء العنف ضد النساء والفتيات؟',['المؤسسات الحكومية فقط.','النساء والفتيات فقط.','جميع أفراد المجتمع ومؤسساته، كل بحسب دوره ومسؤولياته.','المنظمات الدولية فقط.'],2,'إنهاء العنف مسؤولية جماعية تتطلب تعاون وشراكة مختلف الجهات وأفراد المجتمع.')];
-let Q=ld('q2',SEED),CATS=ld('cats',DC),SET=ld('set',{pw:'admin123',sound:true}),PROT=ld('prot',PN.map(n=>({n,f:PF.slice()}))),RES=ld('res',[]);
+let Q=ld('q2',SEED),CATS=ld('cats',DC),SET=ld('set',{pw:'admin123',sound:true}),RES=ld('res',[]);
 if(!Array.isArray(Q)||!Q.length)Q=SEED;
 let V='menu',S={name:'',sound:SET.sound},G=null,AD={ok:false,tab:'ov',m:null,del:null,f:'',c:''};
 const fmt=n=>n.toLocaleString('en-US'),badge=()=>'<div class="badge"><span class="pill">16 DAYS OF ACTIVISM | 2026</span><span class="mut">متحدون لإنهاء العنف ضد النساء والفتيات</span></div>',foot='<div class="foot">تم تطوير هذه اللعبة بواسطة حنين الزوكاني وبيان الزوكاني</div>';
@@ -90,12 +92,11 @@ else if(V==='adm')h=admin();
 a.innerHTML=h+foot;if(V==='final'&&G.end==='win')conf()}
 function conf(){if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;for(let i=0;i<30;i++){const s=document.createElement('i');s.className='cf';s.style.left=Math.random()*100+'vw';s.style.background=['#fff4e0','#f2d27a','#E87532'][i%3];s.style.animationDelay=Math.random()+'s';document.body.appendChild(s);setTimeout(()=>s.remove(),4500)}}
 function admin(){if(!AD.ok)return`${badge()}<div class="box menu"><h2>دخول المشرف</h2><input id="pw" type="password" placeholder="كلمة المرور"><button class="btn" data-a="login">دخول</button><button class="btn g" data-a="go" data-v="menu">رجوع</button>${AD.err?'<div>كلمة المرور غير صحيحة</div>':''}</div>`;
-const T=[['ov','نظرة عامة'],['q','إدارة الأسئلة'],['c','التصنيفات'],['s','إعدادات المسابقة'],['p','خدمات الحماية'],['r','نتائج اللاعبين']];let b='';
+const T=[['ov','نظرة عامة'],['q','إدارة الأسئلة'],['c','التصنيفات'],['s','إعدادات المسابقة'],['r','نتائج اللاعبين']];let b='';
 if(AD.tab==='ov'){const pub=Q.filter(q=>q.pub),miss=[];for(let l=1;l<=N;l++)if(!pub.some(q=>q.level===l))miss.push(l);b=`<div class="stats"><div>الأسئلة<b>${Q.length}</b></div><div>المنشورة<b>${pub.length}</b></div><div>التصنيفات<b>${CATS.length}</b></div><div>الألعاب<b>${RES.length}</b></div><div>أعلى جائزة<b>${fmt(Math.max(0,...RES.map(r=>r.prize)))}</b></div></div><p>مستويات بلا أسئلة منشورة: ${miss.length?miss.join('، '):'لا يوجد'}</p>`}
 if(AD.tab==='q'){const l=Q.filter(q=>(!AD.c||q.cat===AD.c)&&(!AD.f||q.text.includes(AD.f)));b=`<div class="row"><input id="qs" placeholder="بحث" value="${esc(AD.f)}" style="max-width:220px" data-a="x"><select id="qc" style="max-width:220px"><option value="">كل التصنيفات</option>${CATS.map(c=>`<option ${AD.c===c?'selected':''}>${esc(c)}</option>`).join('')}</select><button class="btn" data-a="filt">تصفية</button><button class="btn" data-a="edit" data-v="new">إضافة سؤال</button></div><div style="overflow-x:auto"><table><tr><th>المستوى</th><th>السؤال</th><th>التصنيف</th><th>الحالة</th><th></th></tr>${l.map(q=>`<tr><td>${q.level}</td><td>${esc(q.text)}</td><td>${esc(q.cat)}</td><td>${q.pub?'منشور':'مسودة'}</td><td><button class="btn" data-a="edit" data-v="${esc(q.id)}">تعديل</button> <button class="btn g" data-a="pub" data-v="${esc(q.id)}">${q.pub?'إلغاء النشر':'نشر'}</button> <button class="btn g" data-a="del" data-v="${esc(q.id)}">${AD.del===q.id?'تأكيد الحذف؟':'حذف'}</button></td></tr>`).join('')}</table></div>`}
 if(AD.tab==='c')b=`<div class="row"><input id="nc" placeholder="تصنيف جديد" style="max-width:260px"><button class="btn" data-a="cadd">إضافة</button></div>${CATS.map((c,i)=>`<div class="row box"><span>${esc(c)}</span><button class="btn g" data-a="cdel" data-v="${i}">حذف</button></div>`).join('')}${AD.err?'<p>لا يمكن حذف تصنيف مستخدم في أسئلة.</p>':''}`;
 if(AD.tab==='s')b=`<label>كلمة المرور<input id="spw" value="${esc(SET.pw)}"></label><label><input type="checkbox" id="ssd" style="width:auto" ${SET.sound?'checked':''}> الصوت مفعّل افتراضياً</label><p><button class="btn" data-a="sset">حفظ</button></p>`;
-if(AD.tab==='p')b=PROT.map((p,i)=>`<div class="box"><h3>${esc(p.n)}</h3>${p.f.map((x,j)=>`<input class="pf" data-i="${i}" data-j="${j}" value="${esc(x)}" style="margin:3px 0">`).join('')}</div>`).join('')+'<button class="btn" data-a="psave">حفظ</button>';
 if(AD.tab==='r')b=`<button class="btn g" data-a="rclr">مسح النتائج</button><table><tr><th>الاسم</th><th>الجائزة</th><th>المستوى</th><th>التاريخ</th></tr>${RES.map(r=>`<tr><td>${esc(r.name)}</td><td>${fmt(r.prize)}</td><td>${r.level}</td><td>${esc(r.date)}</td></tr>`).join('')}</table>`;
 return`${badge()}<div class="row"><h2>لوحة المشرف</h2><button class="btn g" data-a="logout">خروج</button></div><div class="tabs">${T.map(t=>`<button class="btn ${AD.tab===t[0]?'':'g'}" data-a="tab" data-v="${t[0]}">${t[1]}</button>`).join('')}</div><div class="box">${b}</div>${AD.m?modal():''}`}
 function modal(){const q=AD.m,L=['أ','ب','ج','د'];return`<div class="mod"><div><h3>${q.id?'تعديل سؤال':'إضافة سؤال'}</h3><label>عنوان السؤال<input id="f_t" value="${esc(q.title)}"></label><label>نص السؤال<textarea id="f_x" rows="2">${esc(q.text)}</textarea></label><label>التصنيف<select id="f_c">${CATS.map(c=>`<option ${q.cat===c?'selected':''}>${esc(c)}</option>`).join('')}</select></label><label>مستوى الصعوبة (1–${N})<input id="f_l" type="number" min="1" max="${N}" value="${q.level}"></label>${[0,1,2,3].map(i=>`<label>الخيار ${L[i]} <input type="radio" name="fa" value="${i}" style="width:auto" ${q.ans===i?'checked':''}> صحيح<input id="f_o${i}" value="${esc(q.opts[i])}"></label>`).join('')}<label>شرح الإجابة<textarea id="f_e" rows="2">${esc(q.exp)}</textarea></label><label>تذكّر (نصيحة سلامة)<textarea id="f_p" rows="2">${esc(q.tip)}</textarea></label><label>تلميح الخبير (اختياري)<input id="f_h" value="${esc(q.hint)}"></label><label><input type="checkbox" id="f_u" style="width:auto" ${q.pub?'checked':''}> منشور</label>${AD.err?`<p>${AD.err}</p>`:''}<p><button class="btn" data-a="qsave">حفظ</button> <button class="btn g" data-a="mclose">إلغاء</button></p></div></div>`}
@@ -123,7 +124,6 @@ del(v){if(AD.del===v){Q=Q.filter(q=>q.id!==v);sv('q2',Q);AD.del=null}else AD.del
 cadd(){const v=$('#nc').value.trim();if(v&&!CATS.includes(v)){CATS.push(v);sv('cats',CATS)}R()},
 cdel(v){const c=CATS[+v];if(Q.some(q=>q.cat===c)){AD.err=true}else{CATS.splice(+v,1);sv('cats',CATS);AD.err=false}R()},
 sset(){SET={pw:$('#spw').value||'admin123',sound:$('#ssd').checked};sv('set',SET);S.sound=SET.sound;R()},
-psave(){document.querySelectorAll('.pf').forEach(e=>{PROT[+e.dataset.i].f[+e.dataset.j]=e.value});sv('prot',PROT);R()},
 rclr(){RES=[];sv('res',RES);R()}};
 document.addEventListener('click',e=>{const t=e.target.closest('[data-a]');if(!t||!A[t.dataset.a])return;try{A[t.dataset.a](t.dataset.v)}catch(x){console.error(x)}});
 document.addEventListener('input',e=>{if(e.target.id==='nm')S.name=e.target.value});
