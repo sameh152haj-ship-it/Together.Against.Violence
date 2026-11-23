@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>معا ضد العنف · صوت لا يسكت</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Reem+Kufi:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--o1:#a8430f;--o2:#d9622a;--o3:#E87532;--gold:#f2d27a;--g2:#d9ac3f;--iv:#fff4e0;--dk:rgba(70,22,0,.5);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%}
+body{background:linear-gradient(160deg,var(--o1),var(--o2));background-attachment:fixed;color:var(--iv);font-family:Cairo,Tahoma,system-ui,sans-serif;line-height:1.6}
+h1,h2,h3{font-family:'Reem Kufi',Cairo,serif;margin:.3em 0}
+#app{max-width:1000px;margin:0 auto;padding:14px;min-height:92vh}
+.c{text-align:center}.badge{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;margin-bottom:10px}
+.pill{direction:ltr;background:var(--iv);color:var(--o1);font-weight:700;font-size:12px;padding:3px 12px;border-radius:99px}
+.mut{font-size:13px;opacity:.9}
+.box{background:var(--dk);border:2px solid var(--gold);border-radius:16px;padding:16px;margin:10px 0}
+.btn{font:inherit;font-weight:700;background:var(--iv);color:var(--o1);border:2px solid var(--gold);border-radius:99px;padding:10px 22px;cursor:pointer;transition:transform .15s,background .15s}
+.btn:hover:not(:disabled){transform:translateY(-2px);background:#fff}.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.g{background:transparent;color:var(--iv)}
+.menu{display:flex;flex-direction:column;gap:10px;max-width:360px;margin:14px auto}
+input,select,textarea{font:inherit;width:100%;padding:10px 14px;border-radius:12px;border:2px solid var(--gold);background:var(--iv);color:#3a1500}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.prog{height:6px;background:rgba(255,255,255,.25);border-radius:9px;overflow:hidden;margin:6px 0 10px}.prog i{display:block;height:100%;background:var(--iv);transition:width .4s}
+.cat{display:inline-block;color:var(--gold);font-weight:700;margin:6px 0}
+.q{border:2px solid var(--gold);background:var(--dk);border-radius:16px;padding:16px;font-size:20px;font-weight:700}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.o{font:inherit;text-align:right;color:var(--iv);background:var(--dk);border:2px solid var(--gold);border-radius:99px;padding:10px 18px;cursor:pointer;transition:background .15s}
+.o b{color:var(--gold);margin-inline-end:8px}.o.s{background:var(--gold);color:#3a1500}.o.s b{color:#3a1500}
+.o.ok{background:#1f8a4c;border-color:#7dffb0;color:#fff;animation:pu .6s 1}.o.no{background:#a11d1d;border-color:#ff9a9a;color:#fff}
+.o.h{visibility:hidden}.o:disabled{cursor:default}
+@keyframes pu{50%{transform:scale(1.04)}}
+.ll{display:flex;gap:8px;flex-wrap:wrap}.ll .btn{padding:6px 14px;font-size:14px}
+.bar{display:flex;align-items:center;gap:8px;margin:4px 0;font-size:14px}.bar span{flex:1;height:10px;background:rgba(255,255,255,.25);border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;background:var(--gold)}
+.fb{border:2px solid var(--gold);background:var(--dk);border-radius:14px;padding:14px;margin:10px 0}
+.fb h3.g{color:#9dffc2}.fb h3.b{color:#ffb0b0}.tip{border-top:2px dashed var(--o3);margin-top:10px;padding-top:8px}.tip b{color:var(--gold)}
+.main{display:grid;grid-template-columns:1fr 190px;gap:14px}
+.lad{background:var(--dk);border:2px solid var(--gold);border-radius:14px;padding:8px;font-size:14px;align-self:start}
+.lad div{display:flex;justify-content:space-between;padding:2px 8px;border-radius:8px;opacity:.8}.lad .sf{font-weight:700;opacity:1}.lad .p{color:var(--gold)}.lad .cur{background:var(--gold);color:#3a1500;opacity:1;font-weight:700}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.stats div{background:var(--dk);border:2px solid var(--gold);border-radius:14px;padding:10px;text-align:center}.stats b{display:block;font-size:22px;color:var(--gold)}
+.msg{border-color:var(--iv)}.slog{font-weight:700;font-size:18px;color:var(--iv);text-decoration:underline var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}.tabs .btn{padding:6px 14px;font-size:14px}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:6px;border-bottom:1px solid rgba(255,255,255,.3);text-align:right}
+.mod{position:fixed;inset:0;background:rgba(40,10,0,.7);display:flex;align-items:flex-start;justify-content:center;overflow:auto;padding:14px;z-index:9}
+.mod>div{background:var(--o1);border:2px solid var(--gold);border-radius:16px;padding:16px;max-width:600px;width:100%}.mod label{display:block;margin-top:8px;font-size:14px}
+.foot{text-align:center;font-size:12px;opacity:.85;margin-top:18px}
+.cf{position:fixed;top:-10px;width:8px;height:12px;animation:fall 3s linear 1 forwards;pointer-events:none}
+@keyframes fall{to{transform:translateY(105vh) rotate(500deg)}}
+@media(max-width:700px){.main{grid-template-columns:1fr}.lad{display:none}.opts{grid-template-columns:1fr}.q{font-size:17px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body><div id="app"></div>
+<script>
+const $=s=>document.querySelector(s),esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const ld=(k,d)=>{try{const v=localStorage.getItem('sl_'+k);return v?JSON.parse(v):d}catch(e){return d}},sv=(k,v)=>{try{localStorage.setItem('sl_'+k,JSON.stringify(v))}catch(e){}};
+const PR=[100,200,300,500,1000,2000,4000,8000,16000,32000,64000],N=PR.length,SAFE=[5,10];
+const DC=['العدالة','الحماية','الإبلاغ والدعم','السلامة الرقمية','المسؤولية المجتمعية','حقوق الناجيات','العنف القائم على النوع الاجتماعي'];
+const TIPS={'العدالة':'العدالة تعني مساءلة مرتكبي العنف وحماية الناجيات دون تحميلهن اللوم.','الحماية':'ضع السلامة أولاً، وتجنب أي تصرف قد يزيد الخطر، واتبع إجراءات الحماية المعتمدة.','الإبلاغ والدعم':'احترام خيارات الناجية وتقديم معلومات موثوقة حول الخدمات المتاحة من أهم مبادئ الحماية.','السلامة الرقمية':'لا تشارك كلمات المرور، واستخدم المصادقة الثنائية، وتجنب الروابط المشبوهة.','المسؤولية المجتمعية':'كن داعماً، ولا تشارك أو تنشر ما يؤذي الآخرين، وتحدث بالاحترام.','حقوق الناجيات':'للناجية الحق في الكرامة والخصوصية والمعلومات وفي اتخاذ قرارها بنفسها.','العنف القائم على النوع الاجتماعي':'لا يوجد ما يبرر العنف، ومسؤوليته على من يرتكبه وليس على الناجية.'};
+const mk=(l,cat,title,text,opts,ans,exp)=>({id:'q'+l,title,text,cat,level:l,opts,ans,exp,tip:'',hint:'',pub:true});
+const S1='فهم العنف وأشكاله',S2='آثار العنف والتعامل مع الناجيات',S3='الوصول إلى العدالة والمسؤولية المجتمعية';
+const SEED=[
+mk(1,'العنف القائم على النوع الاجتماعي',S1,'هل يقتصر العنف ضد المرأة على العنف الجسدي؟',['نعم.','لا، يمكن أن يكون جسدياً أو جنسياً أو نفسياً وغيرها من أشكال الأذى.','يقتصر على العنف داخل الأسرة.'],1,'يشمل تعريف الأمم المتحدة الأذى الجسدي والجنسي والنفسي والتهديد والإكراه.'),
+mk(2,'العنف القائم على النوع الاجتماعي',S1,'أي من التالي يُعد مثالاً على العنف النفسي؟',['التهديد والترهيب المستمر.','تشجيع شخص على تطوير مهاراته.','تقديم الدعم لشخص يمر بصعوبة.'],0,'التهديد والإيذاء النفسي من أشكال العنف التي قد تسبب ضرراً نفسياً.'),
+mk(3,'السلامة الرقمية',S1,'هل يمكن أن يحدث العنف ضد النساء والفتيات في الأماكن الرقمية؟',['لا، العنف يحدث فقط على أرض الواقع.','نعم، يمكن أن يحدث عبر الإنترنت والمنصات الرقمية.','فقط في أماكن العمل.'],1,'تتناول الحملة العنف في المساحات الإلكترونية والواقعية.'),
+mk(4,'السلامة الرقمية',S1,'إذا قام شخص بنشر صورة فتاة دون موافقتها، ما التصرف الأنسب؟',['إعادة نشر الصورة.','دعم الفتاة واحترام خصوصيتها ومساعدتها في الوصول إلى قنوات الإبلاغ الآمنة.','تجاهل الضرر والسخرية منها.'],1,'احترام الخصوصية وتوفير الحماية من مبادئ الاستجابة للعنف الرقمي.'),
+mk(5,'العنف القائم على النوع الاجتماعي',S2,'هل يمكن أن يؤثر العنف على حياة المرأة خارج لحظة حدوثه؟',['نعم، قد يؤثر على صحتها وتعليمها وعلاقاتها ورفاهها.','لا، ينتهي تأثيره فور حدوثه.','يؤثر فقط على حياتها المهنية.'],0,'قد تكون للعنف آثار طويلة الأمد على الصحة والتعليم والفرص الاقتصادية والعلاقات.'),
+mk(6,'حقوق الناجيات',S2,'إذا شاركت فتاة تجربة تعرضها للعنف، ما التصرف الأفضل؟',['الاستماع إليها دون أحكام واحترام خصوصيتها.','لومها على ما حدث.','نشر قصتها لطلب المساعدة دون موافقتها.'],0,'الاستماع دون أحكام واحترام خيارات الناجية جزء من الدعم المتمحور حول الناجية.'),
+mk(7,'حقوق الناجيات',S2,'لماذا يجب تجنب لوم الناجية على تعرضها للعنف؟',['لأنه قد يزيد من شعورها بالوصمة والأذى ويثنيها عن طلب الدعم.','لأنه يجعل المشكلة تختفي.','لأنه يمنع الجهات المختصة من العمل.'],0,'لوم الناجية قد يزيد من معاناتها ويمنعها من طلب المساعدة والإبلاغ عن العنف.'),
+mk(8,'الإبلاغ والدعم',S2,'أي من التالي يُعتبر من خدمات دعم الناجيات؟',['الدعم النفسي والاجتماعي.','المساعدة القانونية.','المأوى وخدمات الحماية.','جميع ما سبق.'],3,'تتطلب الحماية خدمات متكاملة تشمل الجوانب النفسية والقانونية والاجتماعية.'),
+mk(9,'العدالة',S3,'ماذا يعني ضمان الوصول إلى العدالة؟',['توفير آليات آمنة للإبلاغ وخدمات قانونية واستجابة فعالة.','منع الناجيات من تقديم الشكاوى.','تجاهل الحالات التي لا تصل إلى المحاكم.'],0,'العدالة تشمل الوصول إلى آليات الإبلاغ والدعم والإنصاف.'),
+mk(10,'العدالة',S3,'أي من التالي يساعد النساء والفتيات على الوصول إلى العدالة؟',['التوعية بالحقوق.','توفير المساعدة القانونية.','تسهيل الوصول إلى خدمات الإبلاغ.','جميع ما سبق.'],3,'التمكين القانوني والوصول إلى المعلومات والخدمات من أهداف الحملة.'),
+mk(11,'المسؤولية المجتمعية',S3,'من يتحمل مسؤولية المساهمة في إنهاء العنف ضد النساء والفتيات؟',['المؤسسات الحكومية فقط.','النساء والفتيات فقط.','جميع أفراد المجتمع ومؤسساته، كل بحسب دوره ومسؤولياته.','المنظمات الدولية فقط.'],2,'إنهاء العنف مسؤولية جماعية تتطلب تعاون وشراكة مختلف الجهات وأفراد المجتمع.')];
+const PN=['خدمات الحماية','الدعم النفسي والاجتماعي','الخدمات الصحية','حماية الطفل','المساعدة القانونية','آليات الإبلاغ عن الاستغلال والانتهاك الجنسي','الإبلاغ عن الجرائم الإلكترونية'];
+const PF=['[اسم الجهة المختصة]','[رقم التواصل الرسمي]','[أوقات تقديم الخدمة]','[آلية الإحالة المعتمدة]'];
+let Q=ld('q2',SEED),CATS=ld('cats',DC),SET=ld('set',{pw:'admin123',sound:true}),PROT=ld('prot',PN.map(n=>({n,f:PF.slice()}))),RES=ld('res',[]);
+if(!Array.isArray(Q)||!Q.length)Q=SEED;
+let V='menu',S={name:'',sound:SET.sound},G=null,AD={ok:false,tab:'ov',m:null,del:null,f:'',c:''};
+const fmt=n=>n.toLocaleString('en-US'),badge=()=>'<div class="badge"><span class="pill">16 DAYS OF ACTIVISM | 2026</span><span class="mut">متحدون لإنهاء العنف ضد النساء والفتيات</span></div>',foot='<div class="foot">تم تطوير هذه اللعبة بواسطة حنين الزوكاني وبيان الزوكاني</div>';
+const sh=a=>a.map(x=>[Math.random(),x]).sort((a,b)=>a[0]-b[0]).map(x=>x[1]);
+let AC=null;function beep(f,d){if(!S.sound)return;try{AC=AC||new (window.AudioContext||window.webkitAudioContext)();const o=AC.createOscillator(),g=AC.createGain();o.frequency.value=f;g.gain.value=.05;o.connect(g);g.connect(AC.destination);o.start();o.stop(AC.currentTime+d)}catch(e){}}
+function check(q,i){return q.ans===i}
+function build(){const pub=Q.filter(q=>q.pub),used=new Set(),r=[];for(let l=1;l<=N;l++){let c=pub.filter(q=>q.level===l&&!used.has(q.id));if(!c.length)c=pub.filter(q=>!used.has(q.id)).sort((a,b)=>Math.abs(a.level-l)-Math.abs(b.level-l)).slice(0,3);if(!c.length)return null;const q=sh(c)[0];used.add(q.id);r.push(q)}return r}
+const ladder=()=>'<div class="lad">'+PR.map((p,i)=>i).reverse().map(i=>`<div class="${(SAFE.includes(i+1)?'sf ':'')+(i===G.i?'cur':i<G.i?'p':'')}"><span>${i+1}</span><span>${fmt(PR[i])}${SAFE.includes(i+1)?' ★':''}</span></div>`).join('')+'</div>';
+function R(){const a=$('#app');let h='';
+if(V==='menu')h=`${badge()}<div class="c"><svg width="70" height="70" viewBox="0 0 64 64" fill="none" stroke="#f2d27a" stroke-width="3"><path d="M32 8v44M18 52h28M12 20h40M12 20l-8 18a8 8 0 0016 0zM52 20l-8 18a8 8 0 0016 0z"/></svg><h1 style="font-size:44px">معا ضد العنف</h1></div><div class="menu"><input id="nm" placeholder="اكتب اسمك" maxlength="30" value="${esc(S.name)}"><button class="btn" data-a="start">ابدأ اللعب</button><button class="btn g" data-a="go" data-v="ins">التعليمات</button><button class="btn g" data-a="go" data-v="help">أين أطلب المساعدة؟</button><button class="btn g" data-a="go" data-v="adm">دخول المشرف</button><button class="btn g" data-a="snd">الصوت: ${S.sound?'مفعّل':'متوقف'}</button></div>`;
+else if(V==='ins')h=`${badge()}<div class="box"><h2>التعليمات</h2><ul><li>${N} أسئلة متدرجة، لكل سؤال 4 خيارات: اختر ثم اضغط «تأكيد الإجابة».</li><li>المستويان 5 و10 آمنان: عند الإجابة الخاطئة تحتفظ بجائزة آخر مستوى آمن.</li><li>وسائل المساعدة (مرة واحدة لكل لعبة): حذف إجابتين، تصويت الجمهور، اسأل خبير الحماية.</li><li>الانسحاب يحفظ جائزة آخر مستوى أجبت عنه صحيحاً.</li></ul><button class="btn" data-a="go" data-v="menu">رجوع</button></div>`;
+else if(V==='game'){const q=G.round[G.i],L=['أ','ب','ج','د'],d=G.done;
+h=`${badge()}<div class="prog"><i style="width:${(G.i+(d&&G.ok?1:0))/N*100}%"></i></div><div class="main"><div><div class="row"><b>${esc(S.name)}</b><span>السؤال ${G.i+1} من ${N}</span><b style="color:var(--gold)">${G.i?fmt(PR[G.i-1]):0} د.أ ← ${fmt(PR[G.i])}</b></div><div class="cat">${esc(q.cat)}</div><div class="q">${esc(q.text)}</div><div class="opts">${q.opts.map((o,i)=>`<button class="o ${G.hide.includes(i)?'h':''} ${d?(i===q.ans?'ok':i===G.sel?'no':''):(G.sel===i?'s':'')}" ${d?'disabled':''} data-a="sel" data-v="${i}"><b>${L[i]}</b>${esc(o)}</button>`).join('')}</div>
+${G.aud?'<div class="box">'+G.aud.map((p,i)=>p==null?'':`<div class="bar"><b>${L[i]}</b><span><i style="width:${p}%"></i></span>${p}%</div>`).join('')+'</div>':''}${G.ex?`<div class="box">${esc(G.ex)}</div>`:''}
+<div class="row"><div class="ll"><button class="btn" data-a="l50" ${G.u.h||d?'disabled':''}>حذف إجابتين</button><button class="btn" data-a="laud" ${G.u.a||d?'disabled':''}>تصويت الجمهور</button><button class="btn" data-a="lex" ${G.u.e||d?'disabled':''}>اسأل خبير الحماية</button></div><div class="ll"><button class="btn" data-a="conf" ${G.sel==null||d?'disabled':''}>تأكيد الإجابة</button><button class="btn g" data-a="wd" ${d?'disabled':''}>انسحاب</button></div></div>
+${d?`<div class="fb"><h3 class="${G.ok?'g':'b'}">${G.ok?'إجابة صحيحة!':'إجابة خاطئة.'}</h3><div>الإجابة الصحيحة: <b>${esc(q.opts[q.ans])}</b></div><div>${esc(q.exp)}</div><div class="tip"><b>تذكّر:</b> ${esc(q.tip||TIPS[q.cat]||'')}</div><p class="c"><button class="btn" data-a="next">${!G.ok||G.i===N-1?'عرض النتيجة':'السؤال التالي'}</button></p></div>`:''}</div>${ladder()}</div>`}
+else if(V==='final'){const t=G.end,w=t==='win';h=`${badge()}<div class="c"><h1 style="font-size:34px">${w?'مبروك! لقد أصبحت بطل الوعي والحماية':t==='wd'?'انسحبت بذكاء':'شكراً لمشاركتك'}</h1>${w?'<h3>لقد أكملت تحدي الـ16 يومًا</h3>':''}</div><div class="box msg c">العدالة تبدأ بالوعي، والحماية تبدأ بالاستماع، وإنهاء العنف مسؤولية الجميع.</div><p class="c slog">متحدون لإنهاء العنف ضد النساء والفتيات</p><div class="stats"><div>الإجابات الصحيحة<b>${G.correct}</b></div><div>مستوى الجائزة<b>${fmt(G.prize)} د.أ</b></div><div>الأسئلة المكتملة<b>${G.done_n}/${N}</b></div><div>المحاور التوعوية<b>${G.cats.size}/${CATS.length}</b></div></div><p class="c"><button class="btn" data-a="again">العب مرة أخرى</button> <button class="btn g" data-a="go" data-v="help">تعرف على خدمات الحماية</button> <button class="btn g" data-a="go" data-v="menu">القائمة الرئيسية</button></p>`}
+else if(V==='help')h=`${badge()}<h2 class="c">أين أطلب المساعدة؟</h2><div class="grid">${PROT.map(p=>`<div class="box"><h3>${esc(p.n)}</h3>${p.f.map(x=>`<div>${esc(x)}</div>`).join('')}</div>`).join('')}</div><p class="mut c">المعلومات الواردة في هذه الصفحة للتوعية العامة. للحصول على المساعدة، يرجى التواصل مع الجهات المختصة والخدمات المعتمدة في منطقتك.</p><p class="c"><button class="btn" data-a="go" data-v="${G&&G.end?'final':'menu'}">رجوع</button></p>`;
+else if(V==='adm')h=admin();
+a.innerHTML=h+foot;if(V==='final'&&G.end==='win')conf()}
+function conf(){if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;for(let i=0;i<30;i++){const s=document.createElement('i');s.className='cf';s.style.left=Math.random()*100+'vw';s.style.background=['#fff4e0','#f2d27a','#E87532'][i%3];s.style.animationDelay=Math.random()+'s';document.body.appendChild(s);setTimeout(()=>s.remove(),4500)}}
+function admin(){if(!AD.ok)return`${badge()}<div class="box menu"><h2>دخول المشرف</h2><input id="pw" type="password" placeholder="كلمة المرور"><button class="btn" data-a="login">دخول</button><button class="btn g" data-a="go" data-v="menu">رجوع</button>${AD.err?'<div>كلمة المرور غير صحيحة</div>':''}</div>`;
+const T=[['ov','نظرة عامة'],['q','إدارة الأسئلة'],['c','التصنيفات'],['s','إعدادات المسابقة'],['p','خدمات الحماية'],['r','نتائج اللاعبين']];let b='';
+if(AD.tab==='ov'){const pub=Q.filter(q=>q.pub),miss=[];for(let l=1;l<=N;l++)if(!pub.some(q=>q.level===l))miss.push(l);b=`<div class="stats"><div>الأسئلة<b>${Q.length}</b></div><div>المنشورة<b>${pub.length}</b></div><div>التصنيفات<b>${CATS.length}</b></div><div>الألعاب<b>${RES.length}</b></div><div>أعلى جائزة<b>${fmt(Math.max(0,...RES.map(r=>r.prize)))}</b></div></div><p>مستويات بلا أسئلة منشورة: ${miss.length?miss.join('، '):'لا يوجد'}</p>`}
+if(AD.tab==='q'){const l=Q.filter(q=>(!AD.c||q.cat===AD.c)&&(!AD.f||q.text.includes(AD.f)));b=`<div class="row"><input id="qs" placeholder="بحث" value="${esc(AD.f)}" style="max-width:220px" data-a="x"><select id="qc" style="max-width:220px"><option value="">كل التصنيفات</option>${CATS.map(c=>`<option ${AD.c===c?'selected':''}>${esc(c)}</option>`).join('')}</select><button class="btn" data-a="filt">تصفية</button><button class="btn" data-a="edit" data-v="new">إضافة سؤال</button></div><div style="overflow-x:auto"><table><tr><th>المستوى</th><th>السؤال</th><th>التصنيف</th><th>الحالة</th><th></th></tr>${l.map(q=>`<tr><td>${q.level}</td><td>${esc(q.text)}</td><td>${esc(q.cat)}</td><td>${q.pub?'منشور':'مسودة'}</td><td><button class="btn" data-a="edit" data-v="${esc(q.id)}">تعديل</button> <button class="btn g" data-a="pub" data-v="${esc(q.id)}">${q.pub?'إلغاء النشر':'نشر'}</button> <button class="btn g" data-a="del" data-v="${esc(q.id)}">${AD.del===q.id?'تأكيد الحذف؟':'حذف'}</button></td></tr>`).join('')}</table></div>`}
+if(AD.tab==='c')b=`<div class="row"><input id="nc" placeholder="تصنيف جديد" style="max-width:260px"><button class="btn" data-a="cadd">إضافة</button></div>${CATS.map((c,i)=>`<div class="row box"><span>${esc(c)}</span><button class="btn g" data-a="cdel" data-v="${i}">حذف</button></div>`).join('')}${AD.err?'<p>لا يمكن حذف تصنيف مستخدم في أسئلة.</p>':''}`;
+if(AD.tab==='s')b=`<label>كلمة المرور<input id="spw" value="${esc(SET.pw)}"></label><label><input type="checkbox" id="ssd" style="width:auto" ${SET.sound?'checked':''}> الصوت مفعّل افتراضياً</label><p><button class="btn" data-a="sset">حفظ</button></p>`;
+if(AD.tab==='p')b=PROT.map((p,i)=>`<div class="box"><h3>${esc(p.n)}</h3>${p.f.map((x,j)=>`<input class="pf" data-i="${i}" data-j="${j}" value="${esc(x)}" style="margin:3px 0">`).join('')}</div>`).join('')+'<button class="btn" data-a="psave">حفظ</button>';
+if(AD.tab==='r')b=`<button class="btn g" data-a="rclr">مسح النتائج</button><table><tr><th>الاسم</th><th>الجائزة</th><th>المستوى</th><th>التاريخ</th></tr>${RES.map(r=>`<tr><td>${esc(r.name)}</td><td>${fmt(r.prize)}</td><td>${r.level}</td><td>${esc(r.date)}</td></tr>`).join('')}</table>`;
+return`${badge()}<div class="row"><h2>لوحة المشرف</h2><button class="btn g" data-a="logout">خروج</button></div><div class="tabs">${T.map(t=>`<button class="btn ${AD.tab===t[0]?'':'g'}" data-a="tab" data-v="${t[0]}">${t[1]}</button>`).join('')}</div><div class="box">${b}</div>${AD.m?modal():''}`}
+function modal(){const q=AD.m,L=['أ','ب','ج','د'];return`<div class="mod"><div><h3>${q.id?'تعديل سؤال':'إضافة سؤال'}</h3><label>عنوان السؤال<input id="f_t" value="${esc(q.title)}"></label><label>نص السؤال<textarea id="f_x" rows="2">${esc(q.text)}</textarea></label><label>التصنيف<select id="f_c">${CATS.map(c=>`<option ${q.cat===c?'selected':''}>${esc(c)}</option>`).join('')}</select></label><label>مستوى الصعوبة (1–${N})<input id="f_l" type="number" min="1" max="${N}" value="${q.level}"></label>${[0,1,2,3].map(i=>`<label>الخيار ${L[i]} <input type="radio" name="fa" value="${i}" style="width:auto" ${q.ans===i?'checked':''}> صحيح<input id="f_o${i}" value="${esc(q.opts[i])}"></label>`).join('')}<label>شرح الإجابة<textarea id="f_e" rows="2">${esc(q.exp)}</textarea></label><label>تذكّر (نصيحة سلامة)<textarea id="f_p" rows="2">${esc(q.tip)}</textarea></label><label>تلميح الخبير (اختياري)<input id="f_h" value="${esc(q.hint)}"></label><label><input type="checkbox" id="f_u" style="width:auto" ${q.pub?'checked':''}> منشور</label>${AD.err?`<p>${AD.err}</p>`:''}<p><button class="btn" data-a="qsave">حفظ</button> <button class="btn g" data-a="mclose">إلغاء</button></p></div></div>`}
+function finish(t){const q=G.round,w=t==='win';G.end=t;G.prize=w?PR[N-1]:t==='wd'?(G.i?PR[G.i-1]:0):(()=>{const s=SAFE.filter(x=>x<=G.i);return s.length?PR[s[s.length-1]-1]:0})();G.done_n=w?N:G.i;RES.unshift({name:S.name,prize:G.prize,level:G.done_n,date:new Date().toLocaleDateString('en-GB')});sv('res',RES.slice(0,500));V='final';R()}
+function begin(){const r=build();if(!r){alert('لا توجد أسئلة منشورة كافية');return}G={round:r,i:0,sel:null,done:false,ok:false,u:{},hide:[],aud:null,ex:null,correct:0,cats:new Set(),end:null};V='game';R()}
+const A={
+go(v){V=v;R()},snd(){S.sound=!S.sound;R()},
+start(){const n=($('#nm').value||'').trim();if(!n){$('#nm').focus();return}S.name=n;begin()},
+sel(v){if(G.done)return;G.sel=+v;beep(520,.08);R()},
+conf(){const q=G.round[G.i];G.done=true;G.ok=check(q,G.sel);G.aud=null;G.ex=null;if(G.ok){G.correct++;G.cats.add(q.cat);beep(740,.25)}else beep(180,.4);R()},
+next(){if(!G.ok)return finish('lose');if(G.i===N-1){beep(880,.5);return finish('win')}G.i++;G.sel=null;G.done=false;G.hide=[];G.aud=null;G.ex=null;R()},
+wd(){finish('wd')},
+l50(){if(G.u.h||G.done)return;const q=G.round[G.i];G.hide=sh(q.opts.map((_,i)=>i).filter(i=>i!==q.ans)).slice(0,q.opts.length-2);if(G.hide.includes(G.sel))G.sel=null;G.u.h=1;R()},
+laud(){if(G.u.a||G.done)return;const q=G.round[G.i],v=q.opts.map((_,i)=>i).filter(i=>!G.hide.includes(i)),w=v.filter(i=>i!==q.ans);let c=Math.round(Math.max(35,82-(G.i+1)*3.5)+Math.random()*8);c=Math.min(c,95);let left=100-c;const p=[null,null,null,null];p[q.ans]=c;w.forEach((x,k)=>{const s=k===w.length-1?left:Math.floor(Math.random()*(left+1)/ (w.length-k)*1.5);p[x]=Math.min(s,left);left-=p[x]});if(left>0)p[w[0]]+=left;G.aud=p;G.u.a=1;R()},
+lex(){if(G.u.e||G.done)return;const q=G.round[G.i];G.ex=q.hint||TIPS[q.cat]||'';G.u.e=1;R()},
+again(){begin()},
+login(){if($('#pw').value===SET.pw){AD.ok=true;AD.err=false}else AD.err=true;R()},logout(){AD.ok=false;V='menu';R()},tab(v){AD.tab=v;AD.err=false;AD.del=null;R()},
+filt(){AD.f=$('#qs').value;AD.c=$('#qc').value;R()},
+edit(v){AD.err='';AD.m=v==='new'?{title:'',text:'',cat:CATS[0],level:1,opts:['','','',''],ans:0,exp:'',tip:'',hint:'',pub:true}:JSON.parse(JSON.stringify(Q.find(q=>q.id===v)));R()},
+mclose(){AD.m=null;R()},
+qsave(){let o=[0,1,2,3].map(i=>$('#f_o'+i).value.trim());const x=$('#f_x').value.trim(),r=document.querySelector('[name=fa]:checked');if(!o[3])o=o.slice(0,3);if(!x||o.some(s=>!s)||new Set(o).size<o.length||(r?+r.value:0)>=o.length){AD.m=Object.assign(AD.m,{title:$('#f_t').value,text:x,opts:o,exp:$('#f_e').value,tip:$('#f_p').value,hint:$('#f_h').value});AD.err='النص مطلوب، والخيارات (3 على الأقل) يجب أن تكون مختلفة، والإجابة الصحيحة ضمن الخيارات';R();return}
+const q={id:AD.m.id||'u'+Date.now(),title:$('#f_t').value.trim(),text:x,cat:$('#f_c').value,level:Math.min(N,Math.max(1,+$('#f_l').value||1)),opts:o,ans:r?+r.value:0,exp:$('#f_e').value.trim(),tip:$('#f_p').value.trim(),hint:$('#f_h').value.trim(),pub:$('#f_u').checked};const i=Q.findIndex(z=>z.id===q.id);i>=0?Q[i]=q:Q.push(q);sv('q2',Q);AD.m=null;R()},
+pub(v){const q=Q.find(z=>z.id===v);q.pub=!q.pub;sv('q2',Q);R()},
+del(v){if(AD.del===v){Q=Q.filter(q=>q.id!==v);sv('q2',Q);AD.del=null}else AD.del=v;R()},
+cadd(){const v=$('#nc').value.trim();if(v&&!CATS.includes(v)){CATS.push(v);sv('cats',CATS)}R()},
+cdel(v){const c=CATS[+v];if(Q.some(q=>q.cat===c)){AD.err=true}else{CATS.splice(+v,1);sv('cats',CATS);AD.err=false}R()},
+sset(){SET={pw:$('#spw').value||'admin123',sound:$('#ssd').checked};sv('set',SET);S.sound=SET.sound;R()},
+psave(){document.querySelectorAll('.pf').forEach(e=>{PROT[+e.dataset.i].f[+e.dataset.j]=e.value});sv('prot',PROT);R()},
+rclr(){RES=[];sv('res',RES);R()}};
+document.addEventListener('click',e=>{const t=e.target.closest('[data-a]');if(!t||!A[t.dataset.a])return;try{A[t.dataset.a](t.dataset.v)}catch(x){console.error(x)}});
+document.addEventListener('input',e=>{if(e.target.id==='nm')S.name=e.target.value});
+document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.id==='nm')A.start();if(e.key==='Enter'&&e.target.id==='pw')A.login()});
+R();
+</script></body></html>
